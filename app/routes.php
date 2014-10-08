@@ -22,5 +22,6 @@ Route::get('/authtest', array('before' => 'auth.basic', function(){
 
 
 Route::get('usuarios',array('uses' => 'UsuarioController@getUsuario'));
-
-// Route::get('/', 'UsuarioController@getUsuario');
+Route::get('/usuarios/create',array('uses' => 'UsuarioController@create'));
+Route::get('/', 'UsuarioController@getUsuario');
+Route::resource('usuarios' , 'UsuarioController');

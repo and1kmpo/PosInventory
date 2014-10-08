@@ -18,7 +18,12 @@ class UsuarioController extends \BaseController {
 	
 	public function store()
 	{
-		//
+		$usuarios = new User;
+		$usuarios->id = Input::get('id');
+		$usuarios->username = Input::get('username');
+		$usuarios->save();
+		return Redirect::to('usuarios');
+
 	}
 }
 
